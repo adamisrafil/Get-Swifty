@@ -25,11 +25,11 @@ class ViewController: UIViewController {
     }
     @IBAction func didHitShip(_ sender: Any) {
         self.didScore(1)
-        hits = hits + 1
+        hits += 1
     }
     @IBAction func didHitAlien(_ sender: Any) {
         self.didScore(5)
-        hits = hits + 1
+        hits += 1
     }
     func tenHits(){
         if hits == 10 {
