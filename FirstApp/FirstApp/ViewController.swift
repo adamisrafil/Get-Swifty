@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     // ? = optional, you don't have a value and won't know if you will, possibly nil
     // ! = implicityly unwrapped optional, you know that whenever you use the variable it will be defined
     var name:String!
-    var hits:Int = 0
+    var hits:Int = 1
     
     func didScore(_ points:Int){
         score = score + points
