@@ -10,25 +10,43 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var hitsLabel: UILabel!
     var score:Int = 0
+    
+    // ? = optional, you don't have a value and won't know if you will, possibly nil
+    // ! = implicityly unwrapped optional, you know that whenever you use the variable it will be defined
+    var name:String!
+    var hits:Int = 0
     
     func didScore(_ points:Int){
         score = score + points
         label.text = "Score: \(score)"
+        tenHits()
     }
     @IBAction func didHitShip(_ sender: Any) {
         self.didScore(1)
+        hits = hits + 1
     }
     @IBAction func didHitAlien(_ sender: Any) {
         self.didScore(5)
+        hits = hits + 1
     }
-    
+    func tenHits(){
+        if hits == 10 {
+            hitsLabel.text = "Hit: \(hits) NICE"
+        }
+        else{
+            hitsLabel.text = "Hits: \(hits)"
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //self.didScore(5)
-        //self.didScore(10)
-        //didScore()
+        name = "Adam"
+        // if name is not equal to nil then im going to call it newName and if its nill then i'm going to run some other code
+        guard let newName = name else {
+            return
+        }
+        print("name is \(newName)")
     }
 
     override func didReceiveMemoryWarning() {
