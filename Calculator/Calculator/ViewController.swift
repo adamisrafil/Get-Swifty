@@ -12,6 +12,8 @@ enum modes {
     case not_set
     case addition
     case subtraction
+    case multiplication
+    case division
 }
 
 class ViewController: UIViewController {
@@ -41,11 +43,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didPressMultiply(_ sender: Any) {
-        
+        changeModes(newMode: .multiplication)
     }
     
     @IBAction func didPressDivide(_ sender: Any) {
-        
+        changeModes(newMode: .division)
     }
     
     @IBAction func didPressEquals(_ sender: Any) {
@@ -60,8 +62,23 @@ class ViewController: UIViewController {
         if (currentMode == .addition){
             savedNum += labelInt
         }
+            
         else if (currentMode == .subtraction){
             savedNum -= labelInt
+        }
+            
+        else  if (currentMode == .multiplication){
+            savedNum *= labelInt
+        }
+            
+        else if (currentMode == .division){
+            if (labelInt == 0){
+                labelString = "undef"
+            }
+                
+            else{
+                savedNum /= labelInt
+            }
         }
         
         currentMode = .not_set
