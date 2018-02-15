@@ -21,7 +21,12 @@ class ViewController: UIViewController {
     @IBAction func didTapButton(_ sender: Any) {
         if let name = myTextField.text{
             myLabel.text = "Hi \(name)!"
+            myTextField.resignFirstResponder()
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
