@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Views" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2sz-ky-XYt"/>
+                    <navigationItem key="navigationItem" title="Main View" largeTitleDisplayMode="always" id="2sz-ky-XYt">
+                        <barButtonItem key="backBarButtonItem" title="Go Back" id="ma4-Jp-tST"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="Ncp-dE-Wbt" kind="show" identifier="showDetail" id="gyp-Sj-jQs"/>
                     </connections>
@@ -79,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="519" y="118"/>
         </scene>
-        <!--Detail Controller-->
+        <!--Detail View-->
         <scene sceneID="DYa-eC-Hih">
             <objects>
-                <viewController id="Ncp-dE-Wbt" customClass="DetailController" customModule="Views" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail View" id="Ncp-dE-Wbt" customClass="DetailController" customModule="Views" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EeQ-QD-CDC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,8 +116,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FDY-ta-qdJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jul-7t-g1Q">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jul-7t-g1Q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
