@@ -9,25 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
-    let data:[[String]] = [["Item1", "Item2", "Item3"],
-                           ["ItemA", "ItemB", "ItemC", "ItemD"]]
-    let titles:[String] = ["Numbers", "Letters"]
+    let data:[String] = ["Item1", "Item2", "Item3"]
+    let subs:[String] = ["sub1", "sub2", "sub3"]
+    let colors:[UIColor] = [.red, .green, .blue]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data[section].count
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titles[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.section][indexPath.row]
+        cell.textLabel?.text = data[indexPath.row]
+        cell.detailTextLabel?.text = subs[indexPath.row]
+        cell.imageView?.image = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
+        cell.imageView?.tintColor = colors[indexPath.row]
         return cell
     }
     
