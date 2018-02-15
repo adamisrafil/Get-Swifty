@@ -9,18 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var myLabel: UILabel!
-    
-    @IBAction func didTapLoad(_ sender: Any) {
-        myLabel.text = "Changed with code"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
-
+    
+    @IBAction func didTapButton(_ sender: Any) {
+        if let name = myTextField.text{
+            myLabel.text = "Hi \(name)!"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
