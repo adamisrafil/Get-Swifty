@@ -10,19 +10,14 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     let data:[String] = ["Item1", "Item2", "Item3"]
-    let subs:[String] = ["sub1", "sub2", "sub3"]
-    let colors:[UIColor] = [.red, .green, .blue]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
-        cell.detailTextLabel?.text = subs[indexPath.row]
-        cell.imageView?.image = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
-        cell.imageView?.tintColor = colors[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
+        cell.label?.text = data[indexPath.row]
         return cell
     }
     
