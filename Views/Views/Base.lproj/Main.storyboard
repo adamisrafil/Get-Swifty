@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-Db-LnL">
-                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="psN-G8-tjz">
-                                        <rect key="frame" x="0.0" y="55.5" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="psN-G8-tjz" id="Wdg-bZ-wR8">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -39,10 +38,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="0FA-Db-LnL" secondAttribute="bottom" constant="20" symbolic="YES" id="Ju0-MS-lmD"/>
-                            <constraint firstItem="0FA-Db-LnL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TTi-B8-Juu"/>
-                            <constraint firstItem="0FA-Db-LnL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="opW-W1-z24"/>
-                            <constraint firstItem="0FA-Db-LnL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wE9-jA-5tB"/>
+                            <constraint firstItem="0FA-Db-LnL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CiZ-CV-4vt"/>
+                            <constraint firstItem="0FA-Db-LnL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OFu-ma-Z0O"/>
+                            <constraint firstAttribute="trailing" secondItem="0FA-Db-LnL" secondAttribute="trailing" id="U8d-iz-Qw1"/>
+                            <constraint firstItem="0FA-Db-LnL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wKe-59-HYw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
