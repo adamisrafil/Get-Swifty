@@ -18,16 +18,9 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate{
 
     @IBAction func showWebContent(_ sender: Any) {
         let url = URL(string : "https://google.com")
-        let safariVC = SFSafariViewController(url: url!)
-        safariVC.delegate = self
-        present(safariVC, animated: true) {
-            print("presented!")
-        }
+        UIApplication.shared.open(url!, options: ["":""], completionHandler: nil)
     }
     
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        print("safari finished!")
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
