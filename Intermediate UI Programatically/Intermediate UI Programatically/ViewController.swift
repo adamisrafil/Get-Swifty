@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,6 +23,10 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.lightGray
         button.addTarget(self, action: #selector(buttonPress), for: .touchUpInside)
         view.addSubview(button)
+    }
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        progressBar.progress = sender.value
     }
     
     @IBAction func showAlert(_ sender: Any) {
