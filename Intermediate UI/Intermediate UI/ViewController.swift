@@ -7,37 +7,31 @@
 //
 
 import UIKit
+import SafariServices
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    let data:[[String]] = [ ["item 1", "item 2", "item 3", "Item 4"] , ["item A", "item B", "Item C"] , ["item a", "item b", "Item b"], ["item x", "item y"] ]
-    @IBOutlet weak var label: UILabel!
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return data.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data[component].count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data[component][row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        label.text = data[component][row]
-    }
+class ViewController: UIViewController, SFSafariViewControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func showWebContent(_ sender: Any) {
+        let url = URL(string : "https://google.com")
+        let safariVC = SFSafariViewController(url: url!)
+        safariVC.delegate = self
+        present(safariVC, animated: true) {
+            print("presented!")
+        }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        print("safari finished!")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

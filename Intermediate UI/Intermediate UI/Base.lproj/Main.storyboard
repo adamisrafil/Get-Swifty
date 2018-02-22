@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,35 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78F-5P-NYe">
-                                <rect key="frame" x="0.0" y="82" width="375" height="162"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqm-3w-pm8">
+                                <rect key="frame" x="16" y="20" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show web content"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2YP-Kn-DF5"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ga0-Cz-VAT"/>
+                                    <action selector="showWebContent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l44-Jn-S3t"/>
                                 </connections>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iv1-BZ-YyC">
-                                <rect key="frame" x="16" y="252" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="78F-5P-NYe" secondAttribute="trailing" id="3BR-kY-goR"/>
-                            <constraint firstItem="78F-5P-NYe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AE0-7r-9H3"/>
-                            <constraint firstItem="78F-5P-NYe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="J1Q-xd-rEZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="78F-5P-NYe" secondAttribute="bottom" constant="423" id="N05-sq-0kb"/>
-                            <constraint firstItem="iv1-BZ-YyC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jxH-HB-xI3"/>
-                            <constraint firstItem="iv1-BZ-YyC" firstAttribute="top" secondItem="78F-5P-NYe" secondAttribute="bottom" constant="8" symbolic="YES" id="p8A-Up-3NI"/>
-                            <constraint firstItem="iv1-BZ-YyC" firstAttribute="centerX" secondItem="78F-5P-NYe" secondAttribute="centerX" id="pkF-vK-onQ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="iv1-BZ-YyC" id="6Ft-bK-bUI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
