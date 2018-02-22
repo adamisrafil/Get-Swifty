@@ -24,6 +24,21 @@ class ViewController: UIViewController {
         view.addSubview(button)
     }
     
+    @IBAction func showAlert(_ sender: Any) {
+        let alert:UIAlertController = UIAlertController(title: "title", message: "message", preferredStyle: .actionSheet)
+        let action1:UIAlertAction = UIAlertAction(title: "cancel", style: .cancel) { (_:UIAlertAction) in
+            print("cancel handler")
+        }
+        let action2:UIAlertAction = UIAlertAction(title: "delete", style: .destructive) { (_:UIAlertAction) in
+            print("delete handler")
+        }
+        alert.addAction(action1)
+        alert.addAction(action2)
+        self.present(alert, animated: true) {
+            print("alert handler")
+        }
+    }
+    
     @objc func buttonPress() {
         print("button pressed!!")
     }
