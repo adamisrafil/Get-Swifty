@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var segBarLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.lightGray
         button.addTarget(self, action: #selector(buttonPress), for: .touchUpInside)
         view.addSubview(button)
+    }
+    
+    @IBAction func segmentSelected(_ sender: UISegmentedControl) {
+        segBarLabel.text = sender.titleForSegment(at: sender.selectedSegmentIndex)
     }
     
     @IBAction func sliderChanged(_ sender: UISlider) {
