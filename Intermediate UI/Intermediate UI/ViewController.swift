@@ -9,15 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    let data:[String] = ["item 1", "item 2", "item 3"]
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        return data.count
     }
     
-    let data:[String] = ["item 1", "item 2", "item 3"]
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return data[row]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
