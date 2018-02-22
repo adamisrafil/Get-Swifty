@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let data:[[String]] = [ ["item 1", "item 2", "item 3", "Item 4"] , ["item A", "item B", "Item C"] , ["item a", "item b", "Item b"], ["item x", "item y"] ]
+    @IBOutlet weak var label: UILabel!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return data.count
@@ -21,6 +22,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return data[component][row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        label.text = data[component][row]
     }
     
     override func viewDidLoad() {
