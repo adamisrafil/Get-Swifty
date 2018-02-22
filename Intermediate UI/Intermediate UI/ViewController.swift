@@ -7,20 +7,13 @@
 //
 
 import UIKit
-import SafariServices
 
-class ViewController: UIViewController, SFSafariViewControllerDelegate{
+class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    @IBAction func showWebContent(_ sender: Any) {
-        let url = URL(string : "https://google.com")
-        UIApplication.shared.open(url!, options: ["":""], completionHandler: nil)
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
