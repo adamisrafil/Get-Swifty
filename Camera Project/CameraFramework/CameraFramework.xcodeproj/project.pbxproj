@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AEAE03E02048776000D31D16 /* CameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE03DE2048776000D31D16 /* CameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEAE04162048816900D31D16 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE04152048816900D31D16 /* CameraViewController.swift */; };
+		AEAE041820489BDA00D31D16 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE041720489BDA00D31D16 /* Camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		AEAE03DE2048776000D31D16 /* CameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFramework.h; sourceTree = "<group>"; };
 		AEAE03DF2048776000D31D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEAE04152048816900D31D16 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		AEAE041720489BDA00D31D16 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			children = (
 				AEAE03DE2048776000D31D16 /* CameraFramework.h */,
 				AEAE04152048816900D31D16 /* CameraViewController.swift */,
+				AEAE041720489BDA00D31D16 /* Camera.swift */,
 				AEAE03DF2048776000D31D16 /* Info.plist */,
 			);
 			path = CameraFramework;
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEAE041820489BDA00D31D16 /* Camera.swift in Sources */,
 				AEAE04162048816900D31D16 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
