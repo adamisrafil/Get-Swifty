@@ -18,6 +18,8 @@ public final class CameraViewController: UIViewController {
     
     public init() {
         super.init(nibName: nil, bundle: nil)
+        createUI()
+        commitConfiguration()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -33,6 +35,28 @@ public final class CameraViewController: UIViewController {
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func createUI() {
+        self.view.layer.addSublayer(getPreviewLayer(session: self.session))
+    }
+    
+    func commitConfiguration(){
+        do{
+            guard let device = getDevice() else { return }
+            let input = try AVCaptureDeviceInput(device: device)
+            
+            if self.session.canAddInput(input) && self.session.canAddOutput(self.videoOutput) {
+                self.session.addInput(input)
+                self.session.addOutput(self.videoOutput)
+                self.session.commitConfiguration()
+                self.session.stopRunning()
+            }
+        }
+        catch {
+            print("error linking device to avinput!")
+            return
+        }
     }
     
     func getPreviewLayer(session: AVCaptureSession) -> AVCaptureVideoPreviewLayer {
