@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AEAE03E02048776000D31D16 /* CameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE03DE2048776000D31D16 /* CameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEAE04162048816900D31D16 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE04152048816900D31D16 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AEAE03DB2048776000D31D16 /* CameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAE03DE2048776000D31D16 /* CameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFramework.h; sourceTree = "<group>"; };
 		AEAE03DF2048776000D31D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEAE04152048816900D31D16 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				AEAE03DE2048776000D31D16 /* CameraFramework.h */,
+				AEAE04152048816900D31D16 /* CameraViewController.swift */,
 				AEAE03DF2048776000D31D16 /* Info.plist */,
 			);
 			path = CameraFramework;
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					AEAE03DA2048776000D31D16 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEAE04162048816900D31D16 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +258,7 @@
 		AEAE03E42048776000D31D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -267,6 +273,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamisrafil.CameraFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -275,6 +282,7 @@
 		AEAE03E52048776000D31D16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
