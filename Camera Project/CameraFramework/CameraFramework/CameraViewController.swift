@@ -16,6 +16,7 @@ public enum CameraPosition {
 
 public final class CameraViewController: UIViewController {
     fileprivate var camera: Camera?
+    var previewLayer: AVCaptureVideoPreviewLayer?
     
     open var position: CameraPosition = .back {
         didSet {
@@ -39,10 +40,15 @@ public final class CameraViewController: UIViewController {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+//MARK: User Interface Extension
+
+fileprivate extension CameraViewController {
     func createUI() {
         guard let camera = self.camera else { return }
         guard let previewLayer = camera.getPreviewLayer() else { return }
+        self.previewLayer = previewLayer
         self.view.layer.addSublayer(previewLayer)
     }
 }
