@@ -9,6 +9,10 @@
 import UIKit
 import AVFoundation
 
+public protocol CameraControllerDelegate{
+    func cancelBUttonTapped(controller: CameraViewController)
+}
+
 public enum CameraPosition {
     case front
     case back
@@ -17,6 +21,20 @@ public enum CameraPosition {
 public final class CameraViewController: UIViewController {
     fileprivate var camera: Camera?
     var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    private var _cancelButton: UIButton?
+    var cancelButton: UIButton {
+        if let currentButton = _cancelButton {
+            return currentButton
+        }
+        let button = UIButton(frame: CGRect(x: self.view.frame.minX + 10, y: self.view.frame.maxY - 5, width: 70, height: 30))
+        button.setTitle("Cancel", for: .normal)
+        button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        _cancelButton = button
+        return button
+    }
+    
+    open var delegate: CameraControllerDelegate?
     
     open var position: CameraPosition = .back {
         didSet {
@@ -50,5 +68,16 @@ fileprivate extension CameraViewController {
         guard let previewLayer = camera.getPreviewLayer() else { return }
         self.previewLayer = previewLayer
         self.view.layer.addSublayer(previewLayer)
+        self.view.addSubview(self.cancelButton)
+    }
+}
+
+// MARK: UI Button Functions
+
+fileprivate extension CameraViewController {
+    @objc func cancelButtonTapped(){
+        if let delegate = self.delegate {
+            delegate.cancelBUttonTapped(controller: self)
+        }
     }
 }
