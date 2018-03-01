@@ -34,6 +34,4 @@ extension ViewController: CameraControllerDelegate {
     func cancelBUttonTapped(controller: CameraViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
-    
 }

@@ -27,7 +27,7 @@ public final class CameraViewController: UIViewController {
         if let currentButton = _cancelButton {
             return currentButton
         }
-        let button = UIButton(frame: CGRect(x: self.view.frame.minX + 10, y: self.view.frame.maxY - 5, width: 70, height: 30))
+        let button = UIButton()
         button.setTitle("Cancel", for: .normal)
         button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         _cancelButton = button
@@ -55,6 +55,12 @@ public final class CameraViewController: UIViewController {
         camera.update()
     }
     
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        updateUI(orientation: UIApplication.shared.statusBarOrientation)
+        updateButtonFrames()
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -69,6 +75,32 @@ fileprivate extension CameraViewController {
         self.previewLayer = previewLayer
         self.view.layer.addSublayer(previewLayer)
         self.view.addSubview(self.cancelButton)
+    }
+    
+    func updateUI(orientation: UIInterfaceOrientation) {
+        guard let previewLayer = self.previewLayer, let  connection = previewLayer.connection else { return }
+        previewLayer.frame = self.view.bounds
+        switch orientation {
+        case .portrait:
+            connection.videoOrientation = .portrait
+            break
+        case .landscapeLeft:
+            connection.videoOrientation = .landscapeLeft
+            break
+        case .landscapeRight:
+            connection.videoOrientation = .landscapeRight
+            break
+        case .portraitUpsideDown:
+            connection.videoOrientation = .portraitUpsideDown
+            break
+        default:
+            connection.videoOrientation = .portrait
+            break
+        }
+    }
+    
+    func updateButtonFrames(){
+        self.cancelButton.frame = CGRect(x: self.view.frame.minX + 10, y: self.view.frame.maxY - 5, width: 70, height: 30)
     }
 }
 
