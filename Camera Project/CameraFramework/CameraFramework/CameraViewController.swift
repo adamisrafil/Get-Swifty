@@ -76,6 +76,13 @@ public final class CameraViewController: UIViewController {
         updateButtonFrames()
     }
     
+    open class func getVersion() -> String? {
+        let bundle = Bundle(for: CameraViewController.self)
+        guard let info = bundle.infoDictionary else { return nil }
+        guard let versionString = info["CFBundleShortVersionString"] as? String else { return nil }
+        return versionString
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
