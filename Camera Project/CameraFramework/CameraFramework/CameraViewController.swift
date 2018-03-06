@@ -100,7 +100,7 @@ fileprivate extension CameraViewController {
     }
     
     func updateButtonFrames(){
-        self.cancelButton.frame = CGRect(x: self.view.frame.minX + 10, y: self.view.frame.maxY - 5, width: 70, height: 30)
+        self.cancelButton.frame = CGRect(x: self.view.frame.minX + 10, y: self.view.frame.maxY - 50, width: 70, height: 30)
     }
 }
 

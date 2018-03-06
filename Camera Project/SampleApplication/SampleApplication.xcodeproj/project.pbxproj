@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEABD4DA204F19BF00593C9F /* CameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEABD4D9204F19BF00593C9F /* CameraFramework.framework */; };
+		AEABD4DB204F19E800593C9F /* CameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEABD4D9204F19BF00593C9F /* CameraFramework.framework */; };
+		AEABD4DC204F19E800593C9F /* CameraFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEABD4D9204F19BF00593C9F /* CameraFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEAE03F320487C8300D31D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE03F220487C8300D31D16 /* AppDelegate.swift */; };
 		AEAE03F520487C8300D31D16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE03F420487C8300D31D16 /* ViewController.swift */; };
 		AEAE03F820487C8300D31D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAE03F620487C8300D31D16 /* Main.storyboard */; };
@@ -24,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AEABD4DC204F19E800593C9F /* CameraFramework.framework in Embed Frameworks */,
 				AEAE041320487F3600D31D16 /* CameraFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -32,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AEABD4D9204F19BF00593C9F /* CameraFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CameraFramework.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/CameraWorkspace-ahczwpjdqycndsbofswfprswhazo/Build/Products/Debug-iphoneos/CameraFramework.framework"; sourceTree = "<group>"; };
 		AEAE03EF20487C8300D31D16 /* SampleApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAE03F220487C8300D31D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEAE03F420487C8300D31D16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEABD4DB204F19E800593C9F /* CameraFramework.framework in Frameworks */,
+				AEABD4DA204F19BF00593C9F /* CameraFramework.framework in Frameworks */,
 				AEAE041220487F3600D31D16 /* CameraFramework.framework in Frameworks */,
 				AEAE041120487F1E00D31D16 /* CameraFramework.framework in Frameworks */,
 			);
@@ -88,6 +95,7 @@
 		AEAE040F20487EFA00D31D16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEABD4D9204F19BF00593C9F /* CameraFramework.framework */,
 				AEAE041020487F1E00D31D16 /* CameraFramework.framework */,
 			);
 			path = Frameworks;
