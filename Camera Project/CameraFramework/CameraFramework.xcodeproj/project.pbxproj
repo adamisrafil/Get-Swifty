@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEABD4DE204F1FC700593C9F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEABD4DD204F1FC700593C9F /* Media.xcassets */; };
 		AEAE03E02048776000D31D16 /* CameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE03DE2048776000D31D16 /* CameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEAE04162048816900D31D16 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE04152048816900D31D16 /* CameraViewController.swift */; };
 		AEAE041820489BDA00D31D16 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE041720489BDA00D31D16 /* Camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AEABD4DD204F1FC700593C9F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		AEAE03DB2048776000D31D16 /* CameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAE03DE2048776000D31D16 /* CameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFramework.h; sourceTree = "<group>"; };
 		AEAE03DF2048776000D31D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			children = (
 				AEAE03DE2048776000D31D16 /* CameraFramework.h */,
 				AEAE04152048816900D31D16 /* CameraViewController.swift */,
+				AEABD4DD204F1FC700593C9F /* Media.xcassets */,
 				AEAE041720489BDA00D31D16 /* Camera.swift */,
 				AEAE03DF2048776000D31D16 /* Info.plist */,
 			);
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEABD4DE204F1FC700593C9F /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

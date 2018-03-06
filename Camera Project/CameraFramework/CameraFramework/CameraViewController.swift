@@ -34,6 +34,18 @@ public final class CameraViewController: UIViewController {
         return button
     }
     
+    private var _shutterButton: UIButton?
+    var shutterButton: UIButton{
+        if let currentButton = _shutterButton {
+            return currentButton
+        }
+        let button = UIButton()
+        button.setImage(UIImage(named: "trigger", in: Bundle(for: CameraViewController.self), compatibleWith: nil), for: .normal)
+        button.addTarget(self, action: #selector(shutterButtonTapped), for: .touchUpInside)
+        _shutterButton = button
+        return button
+    }
+    
     open var delegate: CameraControllerDelegate?
     
     open var position: CameraPosition = .back {
@@ -45,7 +57,9 @@ public final class CameraViewController: UIViewController {
     
     public init() {
         super.init(nibName: nil, bundle: nil)
-        self.camera = Camera(with: self)
+        let camera = Camera(with: self)
+        camera.delegate = self
+        self.camera = camera
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +89,7 @@ fileprivate extension CameraViewController {
         self.previewLayer = previewLayer
         self.view.layer.addSublayer(previewLayer)
         self.view.addSubview(self.cancelButton)
+        self.view.addSubview(self.shutterButton)
     }
     
     func updateUI(orientation: UIInterfaceOrientation) {
@@ -101,6 +116,7 @@ fileprivate extension CameraViewController {
     
     func updateButtonFrames(){
         self.cancelButton.frame = CGRect(x: self.view.frame.minX + 10, y: self.view.frame.maxY - 50, width: 70, height: 30)
+        self.shutterButton.frame = CGRect(x: self.view.frame.midX - 35, y: self.view.frame.maxY - 80, width: 70, height: 70)
     }
 }
 
@@ -111,5 +127,18 @@ fileprivate extension CameraViewController {
         if let delegate = self.delegate {
             delegate.cancelBUttonTapped(controller: self)
         }
+    }
+    @objc func shutterButtonTapped(){
+        if let camera = self.camera {
+            camera.captureStillImage()
+        }
+    }
+}
+
+// MARK: CameraDelegate Functions
+
+extension CameraViewController: CameraDelegate {
+    func stillImageCaptured(camera: Camera, image: UIImage) {
+        print("Camera button tapped")
     }
 }

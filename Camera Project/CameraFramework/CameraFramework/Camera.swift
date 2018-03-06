@@ -9,8 +9,12 @@
 import UIKit
 import AVFoundation
 
+protocol CameraDelegate {
+    func stillImageCaptured(camera: Camera, image: UIImage)
+}
+
 class Camera: NSObject {
-    
+    var delegate: CameraDelegate?
     var controller: CameraViewController?
     
     var position: CameraPosition = .back {
@@ -40,6 +44,12 @@ class Camera: NSObject {
         previewLayer.frame = controller.view.bounds
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         return previewLayer
+    }
+    
+    func captureStillImage() {
+        if let delegate = self.delegate {
+            delegate.stillImageCaptured(camera: self, image: UIImage())
+        }
     }
     
     func update() {
