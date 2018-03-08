@@ -23,19 +23,31 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        uploadImg(url: "https://orangevalleycaa.org/api/upload_simple.php")
+        uploadImg(url: "https://orangevalleycaa.org/api/upload.php")
     }
     
     func uploadImg(url : String) {
-        if let fileURL = Bundle.main.url(forResource: "OVCAA-transparent", withExtension: "png") {
-            Alamofire.upload(fileURL, to: url)
-            .uploadProgress(closure: { (progress) in
-                print("\(progress.fractionCompleted)")
-            })
-            .responseJSON(completionHandler: { (response) in
-                debugPrint(response)
-            })
+        if let img = UIImage.init(named: "OVCAA-transparent.png"){
+            if let data = UIImageJPEGRepresentation(img, 0.5){
+                Alamofire.upload(multipartFormData: { (multipartFormData) in
+                    multipartFormData.append("bear".data(using: .utf8)!, withName: "username")
+                    multipartFormData.append(data, withName: "fileToUpload")
+                }, to: url, encodingCompletion: { (encodingResult) in
+                    switch encodingResult {
+                    case .failure(let error):
+                        debugPrint(error)
+                    case .success(let req, let streaming, let fileURL):
+                        req.responseJSON(completionHandler: { (response) in
+                            debugPrint(response)
+                        })
+                        req.uploadProgress(closure: {(progress) in
+                            print("\(progress.fractionCompleted)")
+                        })
+                    }
+                })
+            }
         }
+
     }
 }
 
