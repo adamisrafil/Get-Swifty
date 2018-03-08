@@ -6,47 +6,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFInstall/ViewController.swift"
-            timestampString = "542233114.258685"
+            timestampString = "542233785.19547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "fetchURL(url:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchURL(url:param:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.String&gt;) -&gt; () in AFInstall.ViewController.fetchURL(url: Swift.String) -&gt; ()"
+                  symbolName = "AFInstall.ViewController.fetchURL(url: Swift.String, param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
                   moduleName = "AFInstall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adamisrafil/Desktop/Get-Schwifty/AFInstall/AFInstall/ViewController.swift"
-                  timestampString = "542232927.014832"
+                  timestampString = "542233785.287503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "33">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.String&gt;) -&gt; () in AFInstall.ViewController.fetchURL(url: Swift.String, param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "AFInstall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adamisrafil/Desktop/Get-Schwifty/AFInstall/AFInstall/ViewController.swift"
+                  timestampString = "542233785.291046"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "31"
                   endingLineNumber = "31"
                   offsetFromSymbolStart = "222">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.String in closure #1 (Alamofire.DataResponse&lt;Swift.String&gt;) -&gt; () in AFInstall.ViewController.fetchURL(url: Swift.String) -&gt; ()"
-                  moduleName = "AFInstall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamisrafil/Desktop/Get-Schwifty/AFInstall/AFInstall/ViewController.swift"
-                  timestampString = "542232927.018387"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFInstall/ViewController.swift"
-            timestampString = "542233114.2590801"
+            timestampString = "542233785.195847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "fetchURL(url:)"
+            landmarkName = "fetchURL(url:param:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

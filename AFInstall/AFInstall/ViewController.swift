@@ -23,13 +23,13 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchURL(url: "https://orangevalleycaa.org/api/videos")
+        fetchURL(url: "https://orangevalleycaa.org/api/videos", param: ["catergory":"Dance","keyword":"ballet"])
     }
     
-    func fetchURL(url : String) {
-        Alamofire.request(url).responseString { (response) in
+    func fetchURL(url : String, param : [String:Any]) {
+        Alamofire.request(url, parameters: param).responseString { (response) in
             print(response.value ?? "no value")
-            }.responseJSON { (response) in
+        }.responseJSON { (response) in
                 print(response.value ?? "no value")
         }
     }
