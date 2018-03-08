@@ -27,7 +27,14 @@ class ViewController: UIViewController {
     }
     
     func fetchURL(url : String) {
-        Alamofire.download(url).responseData { (response) in
+        
+        let destination : DownloadRequest.DownloadFileDestination = {_,_ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("icon.png")
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        
+        Alamofire.download(url, to: destination).responseData { (response) in
             if let data = response.value {
                 let img = UIImage.init(data: data)
                 let iv = UIImageView.init(frame: self.view.frame)
