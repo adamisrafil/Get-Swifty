@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchURL(url: "https://orangevalleycaa.org/api/videos.php")
+        fetchURL(url: "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png")
     }
     
     func fetchURL(url: String) {
@@ -33,13 +33,12 @@ class ViewController: UIViewController {
                     print("there was an error")
                 }
                 else {
-                    if let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments){
-                        if jsonObject is [Any] {
-                            print("Array: \(jsonObject)")
-                        }
-                        else if jsonObject is [String:Any]{
-                            print("Dictionary: \(jsonObject)")
-                        }
+                    let img = UIImage.init(data: data!)
+                    let iv = UIImageView.init(frame: self.view.frame)
+                    iv.image = img
+                    iv.contentMode = .scaleAspectFit
+                    DispatchQueue.main.async {
+                        self.view.addSubview(iv)
                     }
                 }
             })
