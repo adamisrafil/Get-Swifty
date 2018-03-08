@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -19,7 +20,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchURL(url: "https://orangevalleycaa.org/api/videos")
+    }
+    
+    func fetchURL(url : String) {
+        Alamofire.request(url).responseString { (response) in
+            print(response.value ?? "no value")
+            }.responseJSON { (response) in
+                print(response.value ?? "no value")
+        }
+    }
 }
 
