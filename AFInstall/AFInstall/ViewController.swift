@@ -23,21 +23,20 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchURL(url: "https://orangevalleycaa.org/api/auth/authentication.php")
+        fetchURL(url: "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png")
     }
     
     func fetchURL(url : String) {
-        var headers : HTTPHeaders=[:]
-        
-        if let authHeader = Request.authorizationHeader(user: "bear", password: "test"){
-            headers[authHeader.key] = authHeader.value
-        }
-        
-        Alamofire.request(url, headers: headers).responseString { (response) in
-            print(response.value ?? "no value")
-            debugPrint(response)
-        }.responseJSON { (response) in
-                print(response.value ?? "no value")
+        Alamofire.download(url).responseData { (response) in
+            if let data = response.value {
+                let img = UIImage.init(data: data)
+                let iv = UIImageView.init(frame: self.view.frame)
+                iv.image = img
+                iv.contentMode = .scaleAspectFit
+                DispatchQueue.main.async {
+                    self.view.addSubview(iv)
+                }
+            }
         }
     }
 }
