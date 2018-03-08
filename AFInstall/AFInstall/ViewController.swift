@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchURL(url: "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png")
+        fetchURL(url: "https://www.nasa.gov/images/content/734337main_G306_color_large.jpg")
     }
     
     func fetchURL(url : String) {
@@ -44,6 +44,8 @@ class ViewController: UIViewController {
                     self.view.addSubview(iv)
                 }
             }
+        }.downloadProgress { (progress) in
+                print("\(progress.fractionCompleted)")
         }
     }
 }
