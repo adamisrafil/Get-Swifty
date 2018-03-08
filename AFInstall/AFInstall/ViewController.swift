@@ -27,12 +27,14 @@ class ViewController: UIViewController {
     }
     
     func fetchURL(url : String) {
+        let credential = URLCredential.init(user: "bear", password: "test", persistence: .forSession)
+        
         Alamofire.request(url).responseString { (response) in
             print(response.value ?? "no value")
             debugPrint(response)
         }.responseJSON { (response) in
                 print(response.value ?? "no value")
-        }.authenticate(user: "bear", password: "test")
+            }.authenticate(usingCredential: credential)
     }
 }
 
