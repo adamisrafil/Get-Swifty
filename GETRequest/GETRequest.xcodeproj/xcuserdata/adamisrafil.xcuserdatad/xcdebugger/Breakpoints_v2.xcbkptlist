@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GETRequest/ViewController.swift"
-            timestampString = "542227155.469294"
+            timestampString = "542229546.3803459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "fetchURL(url:)"
             landmarkType = "7">
          </BreakpointContent>

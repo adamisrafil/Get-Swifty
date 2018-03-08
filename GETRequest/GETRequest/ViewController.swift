@@ -27,13 +27,14 @@ class ViewController: UIViewController {
     
     func fetchURL(url: String) {
         if let urlToServer = URL.init(string: url) {
-            let task = URLSession.shared.dataTask(with: urlToServer, completionHandler: { (data, response, error) in
-                if error != nil || data == nil {
+//          let task = URLSession.shared.dataTask(with: urlToServer, completionHandler: { (data, response, error) in
+            let task = URLSession.shared.downloadTask(with: urlToServer, completionHandler: { (fileURL, response, error) in
+                if error != nil || fileURL == nil {
                     //handle error
                     print("there was an error")
                 }
-                else {
-                    let img = UIImage.init(data: data!)
+                else if let data = try? Data.init(contentsOf: fileURL!){
+                    let img = UIImage.init(data: data)
                     let iv = UIImageView.init(frame: self.view.frame)
                     iv.image = img
                     iv.contentMode = .scaleAspectFit
