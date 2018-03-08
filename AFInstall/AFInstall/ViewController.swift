@@ -23,29 +23,18 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchURL(url: "https://www.nasa.gov/images/content/734337main_G306_color_large.jpg")
+        uploadImg(url: "https://orangevalleycaa.org/api/upload_simple.php")
     }
     
-    func fetchURL(url : String) {
-        
-        let destination : DownloadRequest.DownloadFileDestination = {_,_ in
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let fileURL = documentsURL.appendingPathComponent("icon.png")
-            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        
-        Alamofire.download(url, to: destination).responseData { (response) in
-            if let data = response.value {
-                let img = UIImage.init(data: data)
-                let iv = UIImageView.init(frame: self.view.frame)
-                iv.image = img
-                iv.contentMode = .scaleAspectFit
-                DispatchQueue.main.async {
-                    self.view.addSubview(iv)
-                }
-            }
-        }.downloadProgress { (progress) in
+    func uploadImg(url : String) {
+        if let fileURL = Bundle.main.url(forResource: "OVCAA-transparent", withExtension: "png") {
+            Alamofire.upload(fileURL, to: url)
+            .uploadProgress(closure: { (progress) in
                 print("\(progress.fractionCompleted)")
+            })
+            .responseJSON(completionHandler: { (response) in
+                debugPrint(response)
+            })
         }
     }
 }

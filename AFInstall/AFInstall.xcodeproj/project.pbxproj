@@ -13,6 +13,7 @@
 		AE3EBC372051CD540006A3AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3EBC352051CD540006A3AF /* Main.storyboard */; };
 		AE3EBC392051CD540006A3AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE3EBC382051CD540006A3AF /* Assets.xcassets */; };
 		AE3EBC3C2051CD540006A3AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3EBC3A2051CD540006A3AF /* LaunchScreen.storyboard */; };
+		AE3EBC442051E18D0006A3AF /* OVCAA-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3EBC432051E18D0006A3AF /* OVCAA-transparent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AE3EBC382051CD540006A3AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE3EBC3B2051CD540006A3AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE3EBC3D2051CD540006A3AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE3EBC432051E18D0006A3AF /* OVCAA-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OVCAA-transparent.png"; sourceTree = "<group>"; };
 		C2563BC00BF077CA037F576A /* Pods-AFInstall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFInstall.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFInstall/Pods-AFInstall.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 			children = (
 				AE3EBC312051CD540006A3AF /* AppDelegate.swift */,
 				AE3EBC332051CD540006A3AF /* ViewController.swift */,
+				AE3EBC432051E18D0006A3AF /* OVCAA-transparent.png */,
 				AE3EBC352051CD540006A3AF /* Main.storyboard */,
 				AE3EBC382051CD540006A3AF /* Assets.xcassets */,
 				AE3EBC3A2051CD540006A3AF /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE3EBC3C2051CD540006A3AF /* LaunchScreen.storyboard in Resources */,
+				AE3EBC442051E18D0006A3AF /* OVCAA-transparent.png in Resources */,
 				AE3EBC392051CD540006A3AF /* Assets.xcassets in Resources */,
 				AE3EBC372051CD540006A3AF /* Main.storyboard in Resources */,
 			);
